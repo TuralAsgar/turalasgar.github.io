@@ -1,0 +1,823 @@
+2023-06-27 12:38:12.534 +04:00 [INF] Saved entries to config file. Intializing Course Extractor
+2023-06-27 12:38:54.995 +04:00 [ERR] Error while copying content to a stream.
+System.Net.Http.HttpRequestException: Error while copying content to a stream.
+ ---> System.IO.IOException: Unable to read data from the transport connection: Connection reset by peer.
+ ---> System.Net.Sockets.SocketException (54): Connection reset by peer
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.GetResult(Int16 token)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](TIOAdapter adapter, Memory`1 buffer)
+   at System.Net.Http.HttpConnection.FillAsync(Boolean async)
+   at System.Net.Http.HttpConnection.ChunkedEncodingReadStream.CopyToAsyncCore(Stream destination, CancellationToken cancellationToken)
+   at System.Net.Http.HttpConnectionResponseContent.SerializeToStreamAsync(Stream stream, TransportContext context, CancellationToken cancellationToken)
+   at System.Net.Http.HttpContent.LoadIntoBufferAsyncCore(Task serializeToStreamTask, MemoryStream tempBuffer)
+   --- End of inner exception stack trace ---
+   at System.Net.Http.HttpContent.LoadIntoBufferAsyncCore(Task serializeToStreamTask, MemoryStream tempBuffer)
+   at System.Net.Http.HttpClient.SendAsyncCore(HttpRequestMessage request, HttpCompletionOption completionOption, Boolean async, Boolean emitTelemetryStartStop, CancellationToken cancellationToken)
+   at LLCD.CourseExtractor.Extractor.GetCourse(IProgress`1 progress)
+   at LLCD.DownloaderTUI.Program.RunExtractorAndDownloader(Config config, String courseUrl)
+2023-06-27 12:39:29.600 +04:00 [INF] Saved entries to config file. Intializing Course Extractor
+2023-06-27 12:40:36.964 +04:00 [INF] Course Extracted. Downloading...
+2023-06-27 12:43:18.754 +04:00 [ERR] Failed to download video with title What are arrays and how do they work?
+System.AggregateException: On2023-06-27 12:45:17.878 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Advanced_Web_APIs_ASP_NET_Core_dot_NET_6.zip
+System.AggregateException: One or more errors occurred. (An exception occurred during a WebClient request.)
+ ---> System.Net.WebException: An exception occurred during a WebClient request.
+ ---> System.IO.IOException: Unable to read data from the transport connection: Connection reset by peer.
+ ---> System.Net.Sockets.SocketException (54): Connection reset by peer
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.GetResult(Int16 token)
+   at System.Net.Security.SslStream.FillBufferAsync[TIOAdapter](TIOAdapter adapter, Int32 numBytesRequired)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](TIOAdapter adapter, Memory`1 buffer)
+   at System.Net.Http.HttpConnection.ReadAsync(Memory`1 destination)
+   at System.Net.Http.HttpConnection.ContentLengthReadStream.ReadAsync(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:45:17.889 +04:00 [INF] Running Action on Error
+2023-06-27 12:45:17.893 +04:00 [ERR] Trying again ,1
+2023-06-27 12:45:32.918 +04:00 [INF] Course downloaded successfully
+pter, Memory`1 buffer)
+   at System.Net.Http.HttpConnection.ReadAsync(Memory`1 destination)
+   at System.Net.Http.HttpConnection.ContentLengthReadStream.ReadAsync(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass10_0.<DownloadVideo>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:44:21.713 +04:00 [INF] Running Action on Error
+2023-06-27 12:44:21.714 +04:00 [ERR] Trying again ,1
+2023-06-27 12:45:17.840 +04:00 [ERR] Failed to download video with title What are functions?
+System.AggregateException: One or more errors occurred. (An exception occurred during a WebClient request.)
+ ---> System.Net.WebException: An exception occurred during a WebClient request.
+ ---> System.IO.IOException: Unable to read data from the transport connection: Connection reset by peer.
+ ---> System.Net.Sockets.SocketException (54): Connection reset by peer
+   --- End of inner exception stack trace ---
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.ThrowException(SocketError error, CancellationToken cancellationToken)
+   at System.Net.Sockets.Socket.AwaitableSocketAsyncEventArgs.GetResult(Int16 token)
+   at System.Net.Security.SslStream.FillBufferAsync[TIOAdapter](TIOAdapter adapter, Int32 numBytesRequired)
+   at System.Net.Security.SslStream.ReadAsyncInternal[TIOAdapter](TIOAdapter adapter, Memory`1 buffer)
+   at System.Net.Http.HttpConnection.ReadAsync(Memory`1 destination)
+   at System.Net.Http.HttpConnection.ContentLengthReadStream.ReadAsync(Memory`1 buffer, CancellationToken cancellationToken)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass10_0.<DownloadVideo>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:45:17.844 +04:00 [INF] Running Action on Error
+2023-06-27 12:45:17.844 +04:00 [ERR] Trying again ,1
+2023-06-27 12:47:58.511 +04:00 [INF] Course downloaded successfully
+n actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:43:13.843 +04:00 [INF] Running Action on Error
+2023-06-27 12:43:13.844 +04:00 [ERR] Trying again ,4
+2023-06-27 12:43:14.289 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:43:14.293 +04:00 [INF] Running Action on Error
+2023-06-27 12:43:14.294 +04:00 [ERR] Trying again ,5
+2023-06-27 12:43:14.297 +04:00 [FTL] Error occured 5 times without being resolved
+2023-06-27 12:43:14.303 +04:00 [ERR] Error while Downloading
+System.Exception: A fatal error occured in the program. Check the logs for more info
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+   at LLCD.CourseExtractor.Retry.Do(Action function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+   at LLCD.DownloaderTUI.CourseDownloader.DownloadExerciseFile(DirectoryInfo courseDirectory, ProgressBar pbarCourse, ExerciseFile exerciseFile)
+   at LLCD.DownloaderTUI.CourseDownloader.DownloadCourse(Course course, DirectoryInfo courseRootDirectory)
+2023-06-27 12:46:16.772 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:46:16.775 +04:00 [INF] Running Action on Error
+2023-06-27 12:46:16.776 +04:00 [ERR] Trying again ,1
+2023-06-27 12:46:17.404 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:46:17.405 +04:00 [INF] Running Action on Error
+2023-06-27 12:46:17.406 +04:00 [ERR] Trying again ,2
+2023-06-27 12:46:18.698 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:46:18.700 +04:00 [INF] Running Action on Error
+2023-06-27 12:46:18.701 +04:00 [ERR] Trying again ,3
+2023-06-27 12:46:20.458 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:46:20.459 +04:00 [INF] Running Action on Error
+2023-06-27 12:46:20.460 +04:00 [ERR] Trying again ,4
+2023-06-27 12:46:21.228 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:46:21.233 +04:00 [INF] Running Action on Error
+2023-06-27 12:46:21.236 +04:00 [ERR] Trying again ,5
+2023-06-27 12:46:21.237 +04:00 [FTL] Error occured 5 times without being resolved
+2023-06-27 12:46:21.246 +04:00 [ERR] Error while Downloading
+System.Exception: A fatal error occured in the program. Check the logs for more info
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+   at LLCD.CourseExtractor.Retry.Do(Action function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+   at LLCD.DownloaderTUI.CourseDownloader.DownloadExerciseFile(DirectoryInfo courseDirectory, ProgressBar pbarCourse, ExerciseFile exerciseFile)
+   at LLCD.DownloaderTUI.CourseDownloader.DownloadCourse(Course course, DirectoryInfo courseRootDirectory)
+2023-06-27 12:47:55.571 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:47:55.575 +04:00 [INF] Running Action on Error
+2023-06-27 12:47:55.576 +04:00 [ERR] Trying again ,1
+2023-06-27 12:47:56.541 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:47:56.543 +04:00 [INF] Running Action on Error
+2023-06-27 12:47:56.543 +04:00 [ERR] Trying again ,2
+2023-06-27 12:47:57.641 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:47:57.643 +04:00 [INF] Running Action on Error
+2023-06-27 12:47:57.643 +04:00 [ERR] Trying again ,3
+2023-06-27 12:47:58.200 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:47:58.203 +04:00 [INF] Running Action on Error
+2023-06-27 12:47:58.203 +04:00 [ERR] Trying again ,4
+2023-06-27 12:47:58.661 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:47:58.664 +04:00 [INF] Running Action on Error
+2023-06-27 12:47:58.665 +04:00 [ERR] Trying again ,5
+2023-06-27 12:47:58.666 +04:00 [FTL] Error occured 5 times without being resolved
+2023-06-27 12:47:58.670 +04:00 [ERR] Error while Downloading
+System.Exception: A fatal error occured in the program. Check the logs for more info
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+   at LLCD.CourseExtractor.Retry.Do(Action function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+   at LLCD.DownloaderTUI.CourseDownloader.DownloadExerciseFile(DirectoryInfo courseDirectory, ProgressBar pbarCourse, ExerciseFile exerciseFile)
+   at LLCD.DownloaderTUI.CourseDownloader.DownloadCourse(Course course, DirectoryInfo courseRootDirectory)
+2023-06-27 12:48:40.947 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:48:40.953 +04:00 [INF] Running Action on Error
+2023-06-27 12:48:40.954 +04:00 [ERR] Trying again ,1
+2023-06-27 12:48:41.395 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:48:41.397 +04:00 [INF] Running Action on Error
+2023-06-27 12:48:41.397 +04:00 [ERR] Trying again ,2
+2023-06-27 12:48:41.817 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:48:41.819 +04:00 [INF] Running Action on Error
+2023-06-27 12:48:41.819 +04:00 [ERR] Trying again ,3
+2023-06-27 12:48:42.254 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:48:42.256 +04:00 [INF] Running Action on Error
+2023-06-27 12:48:42.256 +04:00 [ERR] Trying again ,4
+2023-06-27 12:48:42.689 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:48:42.690 +04:00 [INF] Running Action on Error
+2023-06-27 12:48:42.690 +04:00 [ERR] Trying again ,5
+2023-06-27 12:48:42.690 +04:00 [FTL] Error occured 5 times without being resolved
+2023-06-27 12:48:42.693 +04:00 [ERR] Error while Downloading
+System.Exception: A fatal error occured in the program. Check the logs for more info
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+   at LLCD.CourseExtractor.Retry.Do(Action function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+   at LLCD.DownloaderTUI.CourseDownloader.DownloadExerciseFile(DirectoryInfo courseDirectory, ProgressBar pbarCourse, ExerciseFile exerciseFile)
+   at LLCD.DownloaderTUI.CourseDownloader.DownloadCourse(Course course, DirectoryInfo courseRootDirectory)
+2023-06-27 12:49:41.046 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:49:41.052 +04:00 [INF] Running Action on Error
+2023-06-27 12:49:41.053 +04:00 [ERR] Trying again ,1
+2023-06-27 12:49:41.596 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:49:41.597 +04:00 [INF] Running Action on Error
+2023-06-27 12:49:41.598 +04:00 [ERR] Trying again ,2
+2023-06-27 12:49:42.099 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:49:42.100 +04:00 [INF] Running Action on Error
+2023-06-27 12:49:42.100 +04:00 [ERR] Trying again ,3
+2023-06-27 12:49:42.596 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:49:42.597 +04:00 [INF] Running Action on Error
+2023-06-27 12:49:42.597 +04:00 [ERR] Trying again ,4
+2023-06-27 12:49:43.093 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:49:43.094 +04:00 [INF] Running Action on Error
+2023-06-27 12:49:43.094 +04:00 [ERR] Trying again ,5
+2023-06-27 12:49:43.094 +04:00 [FTL] Error occured 5 times without being resolved
+2023-06-27 12:49:43.096 +04:00 [ERR] Error while Downloading
+System.Exception: A fatal error occured in the program. Check the logs for more info
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+   at LLCD.CourseExtractor.Retry.Do(Action function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+   at LLCD.DownloaderTUI.CourseDownloader.DownloadExerciseFile(DirectoryInfo courseDirectory, ProgressBar pbarCourse, ExerciseFile exerciseFile)
+   at LLCD.DownloaderTUI.CourseDownloader.DownloadCourse(Course course, DirectoryInfo courseRootDirectory)
+2023-06-27 12:50:27.736 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:50:27.742 +04:00 [INF] Running Action on Error
+2023-06-27 12:50:27.743 +04:00 [ERR] Trying again ,1
+2023-06-27 12:50:28.264 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:50:28.266 +04:00 [INF] Running Action on Error
+2023-06-27 12:50:28.266 +04:00 [ERR] Trying again ,2
+2023-06-27 12:50:28.778 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:50:28.779 +04:00 [INF] Running Action on Error
+2023-06-27 12:50:28.779 +04:00 [ERR] Trying again ,3
+2023-06-27 12:50:29.327 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:50:29.328 +04:00 [INF] Running Action on Error
+2023-06-27 12:50:29.328 +04:00 [ERR] Trying again ,4
+2023-06-27 12:50:29.858 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:50:29.859 +04:00 [INF] Running Action on Error
+2023-06-27 12:50:29.859 +04:00 [ERR] Trying again ,5
+2023-06-27 12:50:29.859 +04:00 [FTL] Error occured 5 times without being resolved
+2023-06-27 12:50:29.861 +04:00 [ERR] Error while Downloading
+System.Exception: A fatal error occured in the program. Check the logs for more info
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+   at LLCD.CourseExtractor.Retry.Do(Action function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+   at LLCD.DownloaderTUI.CourseDownloader.DownloadExerciseFile(DirectoryInfo courseDirectory, ProgressBar pbarCourse, ExerciseFile exerciseFile)
+   at LLCD.DownloaderTUI.CourseDownloader.DownloadCourse(Course course, DirectoryInfo courseRootDirectory)
+2023-06-27 12:51:08.722 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at System.Threading.Tasks.Task.Wait()
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:51:08.727 +04:00 [INF] Running Action on Error
+2023-06-27 12:51:08.728 +04:00 [ERR] Trying again ,1
+2023-06-27 12:51:09.248 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:51:09.251 +04:00 [INF] Running Action on Error
+2023-06-27 12:51:09.251 +04:00 [ERR] Trying again ,2
+2023-06-27 12:51:09.785 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:51:09.786 +04:00 [INF] Running Action on Error
+2023-06-27 12:51:09.786 +04:00 [ERR] Trying again ,3
+2023-06-27 12:51:10.275 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:51:10.276 +04:00 [INF] Running Action on Error
+2023-06-27 12:51:10.276 +04:00 [ERR] Trying again ,4
+2023-06-27 12:51:10.791 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:51:10.792 +04:00 [INF] Running Action on Error
+2023-06-27 12:51:10.792 +04:00 [ERR] Trying again ,5
+2023-06-27 12:51:10.792 +04:00 [FTL] Error occured 5 times without being resolved
+2023-06-27 12:51:10.795 +04:00 [ERR] Error while Downloading
+System.Exception: A fatal error occured in the program. Check the logs for more info
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+   at LLCD.CourseExtractor.Retry.Do(Action function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+   at LLCD.DownloaderTUI.CourseDownloader.DownloadExerciseFile(DirectoryInfo courseDirectory, ProgressBar pbarCourse, ExerciseFile exerciseFile)
+   at LLCD.DownloaderTUI.CourseDownloader.DownloadCourse(Course course, DirectoryInfo courseRootDirectory)
+2023-06-27 12:51:49.248 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:51:49.251 +04:00 [INF] Running Action on Error
+2023-06-27 12:51:49.251 +04:00 [ERR] Trying again ,1
+2023-06-27 12:51:50.029 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:51:50.030 +04:00 [INF] Running Action on Error
+2023-06-27 12:51:50.030 +04:00 [ERR] Trying again ,2
+2023-06-27 12:51:50.451 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:51:50.452 +04:00 [INF] Running Action on Error
+2023-06-27 12:51:50.452 +04:00 [ERR] Trying again ,3
+2023-06-27 12:51:50.896 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:51:50.897 +04:00 [INF] Running Action on Error
+2023-06-27 12:51:50.897 +04:00 [ERR] Trying again ,4
+2023-06-27 12:51:51.324 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:51:51.325 +04:00 [INF] Running Action on Error
+2023-06-27 12:51:51.325 +04:00 [ERR] Trying again ,5
+2023-06-27 12:51:51.326 +04:00 [FTL] Error occured 5 times without being resolved
+2023-06-27 12:51:51.329 +04:00 [ERR] Error while Downloading
+System.Exception: A fatal error occured in the program. Check the logs for more info
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+   at LLCD.CourseExtractor.Retry.Do(Action function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+   at LLCD.DownloaderTUI.CourseDownloader.DownloadExerciseFile(DirectoryInfo courseDirectory, ProgressBar pbarCourse, ExerciseFile exerciseFile)
+   at LLCD.DownloaderTUI.CourseDownloader.DownloadCourse(Course course, DirectoryInfo courseRootDirectory)
+2023-06-27 12:52:31.527 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:52:31.530 +04:00 [INF] Running Action on Error
+2023-06-27 12:52:31.530 +04:00 [ERR] Trying again ,1
+2023-06-27 12:52:31.939 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:52:31.940 +04:00 [INF] Running Action on Error
+2023-06-27 12:52:31.941 +04:00 [ERR] Trying again ,2
+2023-06-27 12:52:32.375 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:52:32.375 +04:00 [INF] Running Action on Error
+2023-06-27 12:52:32.375 +04:00 [ERR] Trying again ,3
+2023-06-27 12:52:32.810 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:52:32.812 +04:00 [INF] Running Action on Error
+2023-06-27 12:52:32.812 +04:00 [ERR] Trying again ,4
+2023-06-27 12:52:33.250 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:52:33.251 +04:00 [INF] Running Action on Error
+2023-06-27 12:52:33.251 +04:00 [ERR] Trying again ,5
+2023-06-27 12:52:33.252 +04:00 [FTL] Error occured 5 times without being resolved
+2023-06-27 12:52:33.255 +04:00 [ERR] Error while Downloading
+System.Exception: A fatal error occured in the program. Check the logs for more info
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+   at LLCD.CourseExtractor.Retry.Do(Action function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+   at LLCD.DownloaderTUI.CourseDownloader.DownloadExerciseFile(DirectoryInfo courseDirectory, ProgressBar pbarCourse, ExerciseFile exerciseFile)
+   at LLCD.DownloaderTUI.CourseDownloader.DownloadCourse(Course course, DirectoryInfo courseRootDirectory)
+2023-06-27 12:53:14.224 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:53:14.225 +04:00 [INF] Running Action on Error
+2023-06-27 12:53:14.226 +04:00 [ERR] Trying again ,1
+2023-06-27 12:53:14.653 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:53:14.654 +04:00 [INF] Running Action on Error
+2023-06-27 12:53:14.654 +04:00 [ERR] Trying again ,2
+2023-06-27 12:53:15.123 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:53:15.125 +04:00 [INF] Running Action on Error
+2023-06-27 12:53:15.125 +04:00 [ERR] Trying again ,3
+2023-06-27 12:53:15.546 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:53:15.547 +04:00 [INF] Running Action on Error
+2023-06-27 12:53:15.547 +04:00 [ERR] Trying again ,4
+2023-06-27 12:53:15.981 +04:00 [ERR] Failed to download exerciseFile with name Ex_Files_Building_RESTful_APIs_Node_js_and_Express.zip
+System.AggregateException: One or more errors occurred. (The remote server returned an error: (404) Not Found.)
+ ---> System.Net.WebException: The remote server returned an error: (404) Not Found.
+   at System.Net.HttpWebRequest.EndGetResponse(IAsyncResult asyncResult)
+   at System.Net.WebClient.GetWebResponse(WebRequest request, IAsyncResult result)
+   at System.Net.WebClient.GetWebResponseTaskAsync(WebRequest request)
+   at System.Net.WebClient.DownloadBitsAsync(WebRequest request, Stream writeStream, AsyncOperation asyncOp, Action`3 completionDelegate)
+   --- End of inner exception stack trace ---
+   at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+   at LLCD.DownloaderTUI.CourseDownloader.<>c__DisplayClass13_0.<DownloadExerciseFile>b__0()
+   at LLCD.CourseExtractor.Retry.<>c__DisplayClass2_0.<Do>b__0()
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+2023-06-27 12:53:15.982 +04:00 [INF] Running Action on Error
+2023-06-27 12:53:15.982 +04:00 [ERR] Trying again ,5
+2023-06-27 12:53:15.982 +04:00 [FTL] Error occured 5 times without being resolved
+2023-06-27 12:53:15.986 +04:00 [ERR] Error while Downloading
+System.Exception: A fatal error occured in the program. Check the logs for more info
+   at LLCD.CourseExtractor.Retry.Do[T](Func`1 function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+   at LLCD.CourseExtractor.Retry.Do(Action function, String exceptionMessage, Action actionOnError, Action actionOnFatal, Int32 retries)
+   at LLCD.DownloaderTUI.CourseDownloader.DownloadExerciseFile(DirectoryInfo courseDirectory, ProgressBar pbarCourse, ExerciseFile exerciseFile)
+   at LLCD.DownloaderTUI.CourseDownloader.DownloadCourse(Course course, DirectoryInfo courseRootDirectory)
